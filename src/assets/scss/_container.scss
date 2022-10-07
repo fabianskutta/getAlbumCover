@@ -17,9 +17,19 @@
     padding-top: 0;
 }
 
+
 @media screen and (max-width: 900px) {
     .name {
         display: flex;
         flex-direction: column;
+    }
+
+    .image {
+
+        padding: 1rem;
+    
+        img {
+            width: 100%;
+        }
     }
   }
