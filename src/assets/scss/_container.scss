@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.downloadBtn {
+
+    margin-top: 1rem;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+  }
