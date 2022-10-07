@@ -2,8 +2,8 @@ import './../scss/main.scss';
 
 const apiEndpoint = 'https://api.spotify.com/v1'
 const authEndpoint = 'https://accounts.spotify.com/api/token'
-const clientId = '4bde22b2e6254e639b6dcefef2b346a7'
-const clientSecret = '41d2d16e324c40018a9c5626ba59cbe8'
+const clientId = '' <- // Your Client Id
+const clientSecret = '' // <- Your Client Secret 
 
 const authString = `${clientId}:${clientSecret}`
 let authorization = btoa( authString )
