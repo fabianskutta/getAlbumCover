@@ -8,7 +8,7 @@ const clientSecret = 'ff188d2860ff44baa57acc79c121a3b9'
 const authString = `${clientId}:${clientSecret}`
 let authorization = btoa( authString )
 
-const authToken = await fetch( authEndpoint, {
+const authToken = fetch( authEndpoint, {
     method: 'post',
     body: 'grant_type=client_credentials',
     headers: {
