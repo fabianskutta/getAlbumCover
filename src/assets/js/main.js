@@ -44,7 +44,7 @@ function searchAlbum(album) {
     var artist = data.albums.items[0].artists[0].name
     var cover = data.albums.items[0].images[0].url
 
-    var download = "/download.php?url=" + cover.substring(cover.lastIndexOf('/') + 1) + "&name=" + name
+    var download = "https://api.fabian.lol//download.php?url=" + cover.substring(cover.lastIndexOf('/') + 1) + "&name=" + name
 
     document.querySelector(".name").innerHTML = `<h2>${artist} - ${name}</h2>
     <a href="${download}" class="btn btn-small btn-primary"><i class="fas fa-download"></i> Download</a>
