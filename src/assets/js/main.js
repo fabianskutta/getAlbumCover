@@ -44,7 +44,11 @@ function searchAlbum(album) {
     var artist = data.albums.items[0].artists[0].name
     var cover = data.albums.items[0].images[0].url
 
-    document.querySelector(".name").innerHTML = `<h2>${artist} - ${name}</h2><a href="${link}" target="_blank" class="btn btn-small btn-spotify"><i class="fab fa-spotify"></i> Open on Spotify</a>`;
+    var download = "/download.php?url=" + cover.substring(cover.lastIndexOf('/') + 1) + "&name=" + name
+
+    document.querySelector(".name").innerHTML = `<h2>${artist} - ${name}</h2>
+    <a href="${download}" class="btn btn-small btn-primary"><i class="fas fa-download"></i> Download</a>
+    <a href="${link}" target="_blank" class="btn btn-small btn-spotify"><i class="fab fa-spotify"></i> Open on Spotify</a>`;
     document.querySelector(".image").innerHTML = `<img src="${cover}" alt="">`;
 
 })
