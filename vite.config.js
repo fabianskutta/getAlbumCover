@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitest/config';
+import topLevelAwait from "vite-plugin-top-level-await";
 
 export default defineConfig({
 	test: {
@@ -11,4 +12,10 @@ export default defineConfig({
 		emptyOutDir: true,
 		outDir: '../dist',
 	},
+	plugins: [
+		topLevelAwait({
+		  promiseExportName: "__tla",
+		  promiseImportName: i => `__tla_${i}`
+		})
+	  ]
 });

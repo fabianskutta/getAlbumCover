@@ -8,7 +8,7 @@ const clientSecret = '41d2d16e324c40018a9c5626ba59cbe8'
 const authString = `${clientId}:${clientSecret}`
 let authorization = btoa( authString )
 
-const authToken = fetch( authEndpoint, {
+const authToken = await fetch( authEndpoint, {
     method: 'post',
     body: 'grant_type=client_credentials',
     headers: {
@@ -29,7 +29,6 @@ button.addEventListener('click', (event) => {
     const input = document.querySelector('#albumSearchInput').value;
     searchAlbum(input)
 });
-
 
 function searchAlbum(album) {
     fetch(`https://api.spotify.com/v1/search?q=${album}&type=album`, {
