@@ -39,10 +39,19 @@ function searchAlbum(album) {
 })
 .then(response => response.json())
 .then((data) => {
+    if (!data.albums.items.length == 0) {
     var name = data.albums.items[0].name
     var link = data.albums.items[0].external_urls.spotify
     var artist = data.albums.items[0].artists[0].name
     var cover = data.albums.items[0].images[0].url
+    document.getElementById("albumSearchInput").style.setProperty('background-color', 'rgba(255, 255, 255, 0.102)');
+    } else {
+        var name = "not found"
+    var link = "https://open.spotify.com/album/1DfRPvrLW4rxw1YyUIjX6r"
+    var artist = "jousai"
+    var cover = "https://i.scdn.co/image/ab67616d0000b2734d312ee39b486548dff9fd4b"
+    document.getElementById("albumSearchInput").style.setProperty('background-color', 'rgba(255, 0, 0, 0.3)');
+    }
 
     var download = "https://api.fabian.lol/download.php?url=" + cover.substring(cover.lastIndexOf('/') + 1) + "&name=" + name
 
@@ -54,7 +63,6 @@ function searchAlbum(album) {
         var rgb = getAverageRGB(document.getElementById('spotifyCover'));
         document.getElementsByTagName( 'html' )[0].style.setProperty('--accent2', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+','+0.30+')');
     }, 200);
-
 })
 };
 
