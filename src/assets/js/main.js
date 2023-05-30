@@ -55,9 +55,9 @@ function searchAlbum(album) {
 
     var download = "https://api.fabian.lol/download.php?url=" + cover.substring(cover.lastIndexOf('/') + 1) + "&name=" + name
 
-    document.querySelector(".name").innerHTML = `<h2>${artist} - ${name}</h2>
-    <a href="${download}" class="btn btn-small btn-primary"><i class="fas fa-download"></i> Download</a>
-    <a href="${link}" target="_blank" class="btn btn-small btn-spotify"><i class="fab fa-spotify"></i> Open on Spotify</a>`;
+    document.querySelector(".name").innerHTML = `<div class="name-h2"><h2>${artist} - ${name}</h2></div>
+    <div class="name-btns"><a href="${download}" class="btn btn-small btn-primary"><i class="fas fa-download"></i> Download</a>
+    <a href="${link}" target="_blank" class="btn btn-small btn-spotify"><i class="fab fa-spotify"></i> Open on Spotify</a></div>`;
     document.querySelector(".image").innerHTML = `<img id="spotifyCover" src="${cover}" crossOrigin="anonymous" alt="">`;
     setTimeout(function(){
         var rgb = getAverageRGB(document.getElementById('spotifyCover'));

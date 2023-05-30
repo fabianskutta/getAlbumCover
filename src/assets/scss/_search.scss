@@ -23,6 +23,7 @@
     border-style: solid;
     border-width: 1px;
     border-radius: 1rem;
+    margin-bottom: 1rem;
   }
 
   .content-container {
@@ -61,6 +62,8 @@
     box-sizing: border-box;
     user-select: none;
     display: flex;
+    white-space: nowrap;
+    font-weight: 500;
 
     i {
       margin-right: 5px;
@@ -78,23 +81,29 @@
   
   .btn-big {
     font-size: 16px;
-    font-weight: 300;
     padding: 12px 20px;
     white-space: nowrap;
   }
   
   .btn-primary {
-    background: #f9063b;
-    box-shadow: 0px 3px 13px 3px #f9063b4d;
+    background: rgb(255, 255, 255);
+    color: #000;
   }
 
   .btn-spotify {
     background:  #1ed760;
-    box-shadow: 0px 3px 13px 3px #1ed7604d;
   }
   
   .btn:hover {
     transform: scale(0.96);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0px 0px 0px 5px #ffffff4d;
+  }
+
+  .btn-spotify:hover {
+    box-shadow: 0px 0px 0px 5px #1ed7604d;
   }
   
   .btn:active {
